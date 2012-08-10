@@ -1,0 +1,7 @@
+name = Fixtures
+description = Enables fixtures in YAML for Drupal (7)
+core = 7.x
+version = VERSION
+
+# I need the libraries module to properly integrate the spyc library
+dependencies[] = libraries
