@@ -1,13 +1,12 @@
 <?php
 function fixtures_drush_command() {
   $items = array();
-
+  // Run all fixtures of all types
   $items['fixtures-all'] = array(
-    'description' => 'Run the menu fixtures',
+    'description' => 'Run all of the fixtures',
     'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_FULL,
     'callback' => 'fixtures_drush_create_all',
   );
-
   return $items;
 }
 
