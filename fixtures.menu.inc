@@ -31,7 +31,6 @@ function _fixtures_create_menu_item($items, $menu, $plid = 0) {
   foreach ($items as $item_key => $item_value) {
     $item = array();
     $item['link_path'] = $item_value['link'];
-    $item['link_path'] = 'node';
     $item['link_title'] = $item_value['title'];
     $item['menu_name'] = $menu['menu_name'];
     $item['plid'] = $plid;
