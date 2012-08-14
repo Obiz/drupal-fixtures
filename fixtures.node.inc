@@ -26,7 +26,7 @@ function fixture_create_node($node_array) {
   $node->created = strtotime($node_array['date']);
   $node->changed = $node->created;
   $node->language = 'en';
-  $node->path = array('alias' => $node_array['path'] ) ;
+  $node->path = array('alias' => $node_array['path']);
   node_save($node);
   return $node;
 }

@@ -11,8 +11,9 @@ function fixtures_drush_command() {
 }
 
 function fixtures_drush_create_all() {
-  // Include the menu part of the module.
+  // Import nodes
   fixtures_create_nodes();
+  // Import menu items
   fixtures_create_menus();
   drush_log('Generating menus from YAML files in "sites/all/fixtures"', 'success');
 }
