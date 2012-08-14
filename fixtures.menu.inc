@@ -30,7 +30,15 @@ function fixtures_create_menus() {
 function _fixtures_create_menu_item($items, $menu, $plid = 0) {
   foreach ($items as $item_key => $item_value) {
     $item = array();
-    $item['link_path'] = $item_value['link'];
+    $path = path_load(array('alias' => $item_value['link']));
+    if ($path) {
+      $item['link_path'] = $path['source'];
+    }
+    else {
+      // Default path if no path is found or the current menu item.
+      $item['link_path'] = 'node';
+    }
+    $item['module'] = 'fixtures';
     $item['link_title'] = $item_value['title'];
     $item['menu_name'] = $menu['menu_name'];
     $item['plid'] = $plid;
