@@ -10,17 +10,33 @@
  *
  */
 
+$includes = array(
+  'fixtures.node',
+  'fixtures.menu',
+);
+
+foreach ($includes as $include) {
+  module_load_include('inc', 'fixtures', $include);
+}
+
 /**
  * implementation of hook_menu()
  */
 function fixtures_menu() {
   $items = array();
-  $items['debug_lib'] = array(
+  $items['debug_menus'] = array(
     'title' => 'debugging fixtures',
     'description' => 'bogus function for debugging fixtures',
     'page callback' => 'fixtures_create_menus',
     'access arguments' => array('access content'),
     'file' => 'fixtures.menu.inc'
+  );
+  $items['debug_nodes'] = array(
+    'title' => 'debugging fixtures',
+    'description' => 'bogus function for debugging fixtures',
+    'page callback' => 'fixtures_create_nodes',
+    'access arguments' => array('access content'),
+    'file' => 'fixtures.node.inc'
   );
   return $items;
 }
