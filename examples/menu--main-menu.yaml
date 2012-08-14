@@ -1,0 +1,26 @@
+custom-menu:
+  title: Custom menu
+  description: A custom menu, used for main navigation
+  items:
+    item-home:
+      title: Home
+      link: home
+    item-about-me:
+      title: About me
+      link: about-me
+      items:
+        item-general:
+          title: General
+          link: about-me
+        item-resume:
+          title: Resume
+          link: resume
+        item-projects:
+          title: Projects
+          link: projects
+    item-blog:
+      title: Blog
+      link: blog
+    item-contact-me:
+      title: Contact me
+      link: contact-me

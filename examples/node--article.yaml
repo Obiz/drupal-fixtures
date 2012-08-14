@@ -1,0 +1,21 @@
+article-1:
+  title: Today something went wrong
+  tags: something went wrong, don't know, whatever other tag
+  type: article
+  body: |
+        Today something went wrong.  I still can't figure out exactly, but i'm still going to blog about
+        it.  I <em>really</em> don't care if anyone reads this, but I want this off my chest.  I'm a really
+        boring writer so I end up writing some rubbish in this YAML file.
+
+        Have fun reading something completely useless :-)
+  date: 2012-08-05 22:48:51
+  author: admin
+  path: blog/today-something-went-wrong
+article-2:
+  title: Today it all went okay
+  tags: everything, went, fine
+  type: article
+  description: all went fine, thanks!
+  date: 2012-08-06 14:33:12
+  author: admin
+  path: blog/today-it-all-went-okay
