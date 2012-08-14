@@ -33,3 +33,7 @@ node--article--batch2.yaml      #
 node--page.yaml                 # All pages, not part of any category
 node--page--about.yaml          # For example all pages that are under the "About" menu item
 node--page--contact.yaml        #
+
+RUN FIXTURES
+============
+Use drush to run the fixtures.  The command is 'drush fixtures-all' and it currently supports only menu items and nodes.
