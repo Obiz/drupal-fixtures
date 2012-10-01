@@ -13,6 +13,7 @@
 $includes = array(
   'fixtures.node',
   'fixtures.menu',
+  'fixtures.user',
 );
 
 foreach ($includes as $include) {

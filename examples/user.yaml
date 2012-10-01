@@ -1,0 +1,5 @@
+my-user:
+  name: my-login
+  mail: my-email@example.com
+  pass: my-password
+  roles: "Existing Role 1, Another role"
