@@ -30,19 +30,27 @@ function fixtures_create_menus() {
 function _fixtures_create_menu_item($items, $menu, $plid = 0) {
   foreach ($items as $item_key => $item_value) {
     $item = array();
-    $path = path_load(array('alias' => $item_value['link']));
-    if ($path) {
-      $item['link_path'] = $path['source'];
+
+    // Menu item may be pre-existing to allow adding children to existing item
+    if (!empty($item_value['exists']) && $item_value['exists'] == TRUE) {
+      $item = menu_link_get_preferred($item_value['link'], $menu['menu_name']);
+      //watchdog('fixtures', print_r($item, 1));
+    } else {
+      $path = path_load(array('alias' => $item_value['link']));
+      if ($path) {
+        $item['link_path'] = $path['source'];
+      }
+      else {
+        // Default path if no path is found or the current menu item.
+        $item['link_path'] = 'node';
+      }
+
+      $item['module'] = 'menu';
+      $item['link_title'] = $item_value['title'];
+      $item['menu_name'] = $menu['menu_name'];
+      $item['plid'] = $plid;
+      menu_link_save($item);
     }
-    else {
-      // Default path if no path is found or the current menu item.
-      $item['link_path'] = 'node';
-    }
-    $item['module'] = 'fixtures';
-    $item['link_title'] = $item_value['title'];
-    $item['menu_name'] = $menu['menu_name'];
-    $item['plid'] = $plid;
-    menu_link_save($item);
     if (array_key_exists('items', $item_value) && is_array($item_value['items'])) {
       _fixtures_create_menu_item($item_value['items'], $menu, $item['mlid']);
     }
